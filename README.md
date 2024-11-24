@@ -1,25 +1,25 @@
-# CS3113 Project 1: Shared Memory
+# CS3113 Project 3: Bounded Buffer (Producer/Consumer Problem)
 
-This project/lab provides a general overview of how shared memory is implemented and cooperates between processes on a Linux System
+This project/lab provides a general overview of how the producer/consumer problem works in real time with file reading and output onto the terminal using semaphores and pthreads.
 
 ## Installation
 **'NOTE: THE IMPLEMENTATION OF THIS CODE IS ONLY FEASIBLE ON LINUX SYSTEMS, THIS IS DENOTED BY THE <UNISTD.H> LIBRARY'**
 
 To install and run the C code provided in the repository we will do the following:
-1. download and unzip the CS3113HW_1 file in any directory, using the terminal we will navigate to the directory and to do so we use the "cd <file_name>" command:
+1. download and unzip the CS3113_Project3 file in any directory, using the terminal we will navigate to the directory and to do so we use the ```cd <file_name>``` command:
   
-<img width="161" alt="Example" src="https://github.com/user-attachments/assets/56969e54-5b59-4b59-911f-ee0258b221e5">
+<img width="389" alt="Result" src="https://github.com/user-attachments/assets/95f49111-8334-40ec-8493-757d6a1f0e9d">
 
-Helpful Tip: Use "ls", shorthand for list services, to determine which directory you are in. Depending on where you are on your local computer you may have to use multiple "cd <file_name>" commands in order to reach the right directory!
+Helpful Tip: Use "ls", shorthand for list services, to determine which directory you are in. Depending on where you are on your local computer you may have to use multiple ```cd <file_name>``` commands in order to reach the right directory!
 
-2. Once we are in the right directory, this should be the CS3113_HW1 folder, do "ls" again and identify the "memory.c" folder in the directory. This is the file we will be compiling!
+2. Once we are in the right directory, this should be the CS3113_Project3 folder, do "ls" again and identify the "BoundedBuffer.c" folder in the directory. This is the file we will be compiling!
 
-<img width="160" alt="Example" src="https://github.com/user-attachments/assets/bb84c74f-0d8c-4a32-9003-46a70e26cddd">
+<img width="299" alt="Code" src="https://github.com/user-attachments/assets/e540e0ba-f953-4820-aff3-6d344e474176">
 
-3. Once you've found the "memory.c" file, we will use the command ```gcc memory.c -o <EXE_FILENAME_HERE>``` to compile our code and create the executable for the respective code we are compiling!
+3. Once you've found the "BoundedBuffer.c" file, we will use the command ```gcc BoundedBuffer.c -lpthread -lrt``` to compile our code and create the executable for the respective code we are compiling!
 
-<img width="273" alt="Example" src="https://github.com/user-attachments/assets/4bf812a3-881b-4bf8-a256-99a4c77e75e1">
+<img width="385" alt="Result" src="https://github.com/user-attachments/assets/96de0a27-ccb2-40d9-8547-9f419e42e083">
 
-In the above snippet, I've decided to name my executable "memory". Once you run the compilation command, use the "ls" command to see your files. The executable file will be colored green and I've circled it above as reference to what it should look like in the terminal
+executing the above command (```gcc BoundedBuffer.c -lpthread -lrt```) creates a standard ```a.out``` executable that can be run in the terminal
 
-Once you've compiled the C file on your machine, we will use the terminal command ```./``` which is the executable command for linux systems. To use this command type in the terminal ```./<EXE_FILENAME_HERE>``` to run the generated program file. For the example shown above that command will look like: ```./memory```. After doing so, you will have successfully run the memory.c file from the executable.
+Once you've compiled the C file on your machine, we will use the terminal command ```./``` which is the executable command for linux systems. To use this command type in the terminal ```./<EXE_FILENAME_HERE>``` to run the generated program file. For the example shown above that command will look like: ```./a.out```. After doing so, you will have successfully run the BoundedBuffer.c file from the executable.
