@@ -54,6 +54,7 @@ void *producerFunction(void *param){
 
 		sem_post(&mutex);
 		sem_post(&full);
+		fclose(readingFile);
 }
 
 void *consumerFunction(void *param){
